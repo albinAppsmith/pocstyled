@@ -162,7 +162,7 @@ const ButtonStyles = css`
   &:active {
     background-color: ${props => getButtonHoverBackground(props.category, props.isDisabled)};
   }
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
