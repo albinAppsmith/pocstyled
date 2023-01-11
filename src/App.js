@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Button from './Button';
 import styled from 'styled-components';
-
+import { token } from '@atlaskit/tokens';
 const Main = styled.div`
   display: flex;
   flex-direction: row;
@@ -25,8 +25,8 @@ const Sidebar = styled.div`
   padding: 0.5rem;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--ads-color-orange-500);
-  background-color: white;
+  border-color: ${token('color.background.default')};
+  background-color: ${token('color.text.accent.purple.bolder')};
   height: 100%;
   width: 300px;
   padding-top: 4rem;
@@ -44,10 +44,10 @@ function App() {
   const [buttonCount, setButtonCount] = useState(5);
   const [padding, setPadding] = useState("0.5rem");
   const [borderWidth, setBorderWidth] = useState("1px");
-  const [buttonColor, setButtonColor] = useState("var(--ads-color-orange-500)");
+  const [buttonColor, setButtonColor] = useState(token('color.text.accent.orange'));
   const [fontSize, setFontSize] = useState("1rem");
   const [margin, setMargin] = useState("2px");
-  const [color, setColor] = useState("var(--ads-color-black-0)");
+  const [color, setColor] = useState(token('color.text.accent.orange.bolder'));
 
   const buttons = [];
   for(let i = 0; i < buttonCount; i++) {
@@ -108,10 +108,10 @@ function App() {
         <label>Button Color</label>
         <Select value={buttonColor} onChange={(e) => setButtonColor(e.target.value)}>
           <option value="white">Button Color</option>
-          <option value="var(--ads-color-orange-500)">Orange</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="red">Red</option>
+          <option value={`${token('color.border.accent.orange')}`}>Orange</option>
+          <option value={`${token('color.border.accent.blue')}`}>Blue</option>
+          <option value={`${token('color.text.accent.green.bolder')}`}>Green</option>
+          <option value={`${token('color.border.accent.red')}`}>Red</option>
         </Select>
         <br/>
         <label>Font Size</label>
@@ -133,7 +133,7 @@ function App() {
         <label>Color</label>
         <Select value={color} onChange={(e) => setColor(e.target.value)}>
           <option value="white">Color</option>
-          <option value="var(--ads-color-black)">Black</option>
+          <option value={`token('color.text')`}>Black</option>
           <option value="white">White</option>
         </Select>
       </Sidebar>

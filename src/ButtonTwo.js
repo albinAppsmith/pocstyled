@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Size, Category, IconPositions, IconNames } from './constants';
+import { token } from '@atlaskit/tokens';
 
 const typography = {
   btnLarge: {
@@ -46,33 +47,33 @@ const largeButton = css`
 
 const getButtonBackground = (category, isDisabled) => {
   if (isDisabled) {
-    return 'var(--ads-color-black-500)';
+    return token(color.text);
   }
   switch (category) {
     case Category.primary:
-      return 'var(--ads-color-orange-500)';
+      return token(color.background.accent.orange.subtle);
     case Category.secondary:
       return 'var(--ads-color-black)';
     case Category.tertiary:
       return 'transparent';
     default:
-      return 'var(--ads-color-orange-500)';
+      return token(color.background.accent.orange.subtle);
   }
 };
 
 const getButtonHoverBackground = (category, isDisabled) => {
   if (isDisabled) {
-    return 'var(--ads-color-black-500)';
+    return token('color.text');
   }
   switch (category) {
     case Category.primary:
-      return 'var(--ads-color-orange-600)';
+      return token('color.border.accent.orange');
     case Category.secondary:
-      return 'var(--ads-color-black-500)';
+      return token(color.text);
     case Category.tertiary:
-      return 'var(--ads-color-black-500)';
+      return token(color.text);
     default:
-      return 'var(--ads-color-orange-600)';
+      return token('color.border.accent.orange');
   }
 };
 
@@ -82,13 +83,13 @@ const getButtonColor = (category, isDisabled) => {
   }
   switch (category) {
     case Category.primary:
-      return 'var(--ads-color-black-0)';
+      return token(color.text.subtle);
     case Category.secondary:
-      return 'var(--ads-color-black-0)';
+      return token(color.text.subtle);
     case Category.tertiary:
       return 'var(--ads-color-black)';
     default:
-      return 'var(--ads-color-black-0)';
+      return token(color.text.subtle);
   }
 };
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import '@atlaskit/tokens/css/atlassian-light.css';
+import '@atlaskit/tokens/css/atlassian-dark.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
